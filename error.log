@@ -1,0 +1,17 @@
+[Sat Dec 28 09:57:15.031451 2019] [authz_core:debug] [pid 7088] mod_authz_core.c(809): [client 127.0.0.1:44410] AH01626: authorization result of Require all granted: granted
+[Sat Dec 28 09:57:15.031546 2019] [authz_core:debug] [pid 7088] mod_authz_core.c(809): [client 127.0.0.1:44410] AH01626: authorization result of <RequireAny>: granted
+[Sat Dec 28 09:57:15.031764 2019] [authz_core:debug] [pid 7088] mod_authz_core.c(809): [client 127.0.0.1:44410] AH01626: authorization result of Require all granted: granted
+[Sat Dec 28 09:57:15.031788 2019] [authz_core:debug] [pid 7088] mod_authz_core.c(809): [client 127.0.0.1:44410] AH01626: authorization result of <RequireAny>: granted
+[Sat Dec 28 09:57:25.741078 2019] [authz_core:debug] [pid 7113] mod_authz_core.c(809): [client 127.0.0.1:44420] AH01626: authorization result of Require all granted: granted, referer: http://laravel-test.com/
+[Sat Dec 28 09:57:25.741140 2019] [authz_core:debug] [pid 7113] mod_authz_core.c(809): [client 127.0.0.1:44420] AH01626: authorization result of <RequireAny>: granted, referer: http://laravel-test.com/
+[Sat Dec 28 09:57:25.741253 2019] [authz_core:debug] [pid 7113] mod_authz_core.c(809): [client 127.0.0.1:44420] AH01626: authorization result of Require all granted: granted, referer: http://laravel-test.com/
+[Sat Dec 28 09:57:25.741272 2019] [authz_core:debug] [pid 7113] mod_authz_core.c(809): [client 127.0.0.1:44420] AH01626: authorization result of <RequireAny>: granted, referer: http://laravel-test.com/
+[Sat Dec 28 09:57:27.165267 2019] [authz_core:debug] [pid 7114] mod_authz_core.c(809): [client 127.0.0.1:44424] AH01626: authorization result of Require all granted: granted, referer: http://laravel-test.com/
+[Sat Dec 28 09:57:27.165360 2019] [authz_core:debug] [pid 7114] mod_authz_core.c(809): [client 127.0.0.1:44424] AH01626: authorization result of <RequireAny>: granted, referer: http://laravel-test.com/
+[Sat Dec 28 09:59:26.991801 2019] [authz_core:debug] [pid 7084] mod_authz_core.c(809): [client 127.0.0.1:44428] AH01626: authorization result of Require all granted: granted
+[Sat Dec 28 09:59:27.007014 2019] [authz_core:debug] [pid 7084] mod_authz_core.c(809): [client 127.0.0.1:44428] AH01626: authorization result of <RequireAny>: granted
+[Sat Dec 28 09:59:27.007311 2019] [authz_core:debug] [pid 7084] mod_authz_core.c(809): [client 127.0.0.1:44428] AH01626: authorization result of Require all granted: granted
+[Sat Dec 28 09:59:27.007346 2019] [authz_core:debug] [pid 7084] mod_authz_core.c(809): [client 127.0.0.1:44428] AH01626: authorization result of <RequireAny>: granted
+[Sat Dec 28 09:59:27.194565 2019] [deflate:debug] [pid 7084] mod_deflate.c(853): [client 127.0.0.1:44428] AH01384: Zlib: Compressed 2426 to 743 : URL /index.php
+[Sat Dec 28 09:59:27.533188 2019] [authz_core:debug] [pid 7084] mod_authz_core.c(809): [client 127.0.0.1:44428] AH01626: authorization result of Require all granted: granted, referer: http://laravel-test.com/
+[Sat Dec 28 09:59:27.533226 2019] [authz_core:debug] [pid 7084] mod_authz_core.c(809): [client 127.0.0.1:44428] AH01626: authorization result of <RequireAny>: granted, referer: http://laravel-test.com/

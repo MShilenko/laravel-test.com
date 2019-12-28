@@ -1,0 +1,5 @@
+127.0.0.1 - - [28/Dec/2019:09:57:15 +0300] "GET / HTTP/1.1" 500 517176 "-" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Ubuntu Chromium/79.0.3945.79 Chrome/79.0.3945.79 Safari/537.36"
+127.0.0.1 - - [28/Dec/2019:09:57:27 +0300] "GET /favicon.ico HTTP/1.1" 200 296 "http://laravel-test.com/" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Ubuntu Chromium/79.0.3945.79 Chrome/79.0.3945.79 Safari/537.36"
+127.0.0.1 - - [28/Dec/2019:09:57:25 +0300] "GET /_ignition/health-check HTTP/1.1" 200 259 "http://laravel-test.com/" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Ubuntu Chromium/79.0.3945.79 Chrome/79.0.3945.79 Safari/537.36"
+127.0.0.1 - - [28/Dec/2019:09:59:26 +0300] "GET / HTTP/1.1" 200 2454 "-" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Ubuntu Chromium/79.0.3945.79 Chrome/79.0.3945.79 Safari/537.36"
+127.0.0.1 - - [28/Dec/2019:09:59:27 +0300] "GET /favicon.ico HTTP/1.1" 200 295 "http://laravel-test.com/" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Ubuntu Chromium/79.0.3945.79 Chrome/79.0.3945.79 Safari/537.36"

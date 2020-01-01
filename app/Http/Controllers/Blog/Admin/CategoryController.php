@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Blog\Admin;
 
+use App\Http\Requests\BlogCategoryUpdateRequest;
 use App\Models\BlogCategory;
 use Illuminate\Http\Request;
 
@@ -72,9 +73,26 @@ class CategoryController extends BaseController
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
-    {
-        dd($request, $id);
+    public function update(BlogCategoryUpdateRequest $request, $id)
+    {   
+
+        $categoryUpdate = BlogCategory::find($id);
+
+        if(empty($categoryUpdate)){
+            return back(301)
+                ->withErrors(['msg' => 'Запись id=[{$id}] не найдена'])
+                ->withInput();
+        }
+        
+        if($categoryUpdate->fill($request->all())->save()){
+            return redirect()
+                ->route('blog.admin.categories.edit', $categoryUpdate->id)
+                ->with(['success' => 'Успешно сохранено']);
+        }else{
+            return back(301)
+                ->withErrors(['msg' => 'Ошибка сохранения'])
+                ->withInput();   
+        }
     }
 
     /**

@@ -31,7 +31,7 @@
 					</div>
 					<div class="form-group">
 						<label for="title">Описание</label>
-						<textarea name="description" value="{{ $categoryForEdit->description }}" id="description" rows="3" class="form-control"></textarea>
+						<textarea name="description" value="{{ old('description', $categoryForEdit->description) }}" id="description" rows="3" class="form-control">{{ old('description', $categoryForEdit->description) }}</textarea>
 					</div>
 				</div>	
 			</div>	

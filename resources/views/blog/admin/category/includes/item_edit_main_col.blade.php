@@ -1,7 +1,7 @@
 @php 
 /** 
- * @var array $categoryForEdit |App|Models|BlogCategory 
- * @var array $categoriesListForEdeit |App|Models|BlogCategory 
+ * @var array $category |App|Models|BlogCategory 
+ * @var array $categoriesList |App|Models|BlogCategory 
  */ 
 @endphp
 
@@ -12,26 +12,26 @@
 				<div class="card-body">	
 					<div class="form-group">
 						<label for="title">Заголовок</label>
-						<input name="title" value="{{ $categoryForEdit->title }}" id="title" type="text" class="form-control" required>
+						<input name="title" value="{{ $category->title }}" id="title" type="text" class="form-control" required>
 					</div>	
 					<div class="form-group">
-						<label for="title">Идентификатор</label>
-						<input name="title" value="{{ $categoryForEdit->slug }}" id="slug" type="text" class="form-control">
+						<label for="slug">Идентификатор</label>
+						<input name="slug" value="{{ $category->slug }}" id="slug" type="text" class="form-control">
 					</div>
 					<div class="form-group">
 						<label for="title">Родитель</label>
-						<select name="parent_id" value="{{ $categoryForEdit->slug }}" id="slug" type="text" class="form-control" placeholder="Выберите категорию" required>
-							@foreach($categoriesListForEdeit as $category)
-								<option value="{{ $category->id }}"
-									@if($category->id == $categoryForEdit->parent_id) selected @endif>
-										{{ $category->id }}. {{ $category->title }}
+						<select name="parent_id" value="{{ $category->slug }}" id="slug" type="text" class="form-control" placeholder="Выберите категорию" required>
+							@foreach($categoriesList as $categoryList)
+								<option value="{{ $categoryList->id }}"
+									@if($categoryList->id == $category->parent_id) selected @endif>
+										{{ $categoryList->id }}. {{ $categoryList->title }}
 									</option>
 							@endforeach
 						</select>
 					</div>
 					<div class="form-group">
 						<label for="title">Описание</label>
-						<textarea name="description" value="{{ old('description', $categoryForEdit->description) }}" id="description" rows="3" class="form-control">{{ old('description', $categoryForEdit->description) }}</textarea>
+						<textarea name="description" value="{{ old('description', $category->description) }}" id="description" rows="3" class="form-control">{{ old('description', $category->description) }}</textarea>
 					</div>
 				</div>	
 			</div>	

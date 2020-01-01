@@ -1,6 +1,6 @@
 @php 
 /** 
- * @var array $categoryForEdit |App|Models|BlogCategory 
+ * @var array $category |App|Models|BlogCategory 
  */ 
 @endphp
 
@@ -12,11 +12,12 @@
 					<button type="submit" class="btn btn-primary">Сохранить</button>
 				</div>	
 			</div>	
-		</div>	
+		</div>
+@if($category->exists)			
 		<div class="col-md-12">
 			<div class="card">
 				<div class="card-body">
-					ID: {{ $categoryForEdit->id }}
+					ID: {{ $category->id }}
 				</div>	
 			</div>	
 		</div>	
@@ -27,18 +28,19 @@
 					<div class="card-body">	
 						<div class="form-group">
 							<label for="title">Создано</label>
-							<input name="title" value="{{ $categoryForEdit->created_at }}" class="form-control" disabled>
+							<input name="title" value="{{ $category->created_at }}" class="form-control" disabled>
 						</div>	
 						<div class="form-group">
 							<label for="title">Изменено</label>
-							<input name="title" value="{{ $categoryForEdit->updated_at }}" class="form-control" disabled>
+							<input name="title" value="{{ $category->updated_at }}" class="form-control" disabled>
 						</div>	
 						<div class="form-group">
 							<label for="title">Удалено</label>
-							<input name="title" value="{{ $categoryForEdit->deleted_at }}" class="form-control" disabled>
+							<input name="title" value="{{ $category->deleted_at }}" class="form-control" disabled>
 						</div>	
 				</div>
 			</div>
 		</div>	
 	</div>		
+@endif	
 </div>	

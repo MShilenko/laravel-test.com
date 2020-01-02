@@ -20,7 +20,7 @@
 					</div>
 					<div class="form-group">
 						<label for="title">Родитель</label>
-						<select name="parent_id" value="{{ $category->slug }}" id="slug" type="text" class="form-control" placeholder="Выберите категорию" required>
+						<select name="parent_id" value="{{ $category->parent_id }}" id="parent_id" type="text" class="form-control" placeholder="Выберите категорию" required>
 							@foreach($categoriesList as $categoryList)
 								<option value="{{ $categoryList->id }}"
 									@if($categoryList->id == $category->parent_id) selected @endif>

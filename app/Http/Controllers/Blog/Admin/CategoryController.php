@@ -1,12 +1,11 @@
 <?php
 
 namespace App\Http\Controllers\Blog\Admin;
-
 use App\Http\Requests\BlogCategoryCreateRequest;
 use App\Http\Requests\BlogCategoryUpdateRequest;
 use App\Models\BlogCategory;
+use App\Repositories\BlogCategoryRepository;
 use Illuminate\Http\Request;
-use Illuminate\Support\Str;
 
 class CategoryController extends BaseController
 {
@@ -17,6 +16,7 @@ class CategoryController extends BaseController
      */
     public function __construct()
     {
+        $this->middleware('createSlug')->only('update', 'store');
         $this->categoriesList = BlogCategory::all();
     }
     /**
@@ -27,10 +27,8 @@ class CategoryController extends BaseController
     public function index()
     {
         $categories = BlogCategory::paginate(5);
-
         return view('blog.admin.category.index', compact('categories'));
     }
-
     /**
      * Show the form for creating a new resource.
      *
@@ -40,10 +38,8 @@ class CategoryController extends BaseController
     {
         $category = new BlogCategory();
         $categoriesList = $this->categoriesList;
-
         return view('blog.admin.category.edit', compact('categoriesList', 'category'));
     }
-
     /**
      * Store a newly created resource in storage.
      *
@@ -51,15 +47,10 @@ class CategoryController extends BaseController
      * @return \Illuminate\Http\Response
      */
     public function store(BlogCategoryCreateRequest $request)
-    {
-        $dataForStore = $request->input();
-        $category = new BlogCategory();
+    {        
+        $category = (new BlogCategory())->create($request->input());
 
-        if(empty($dataForStore['slug'])){
-            $dataForStore['slug'] = Str::slug($dataForStore['title']);
-        }
-
-        if(($category)->create($dataForStore)){
+        if($category){
             return redirect()
                 ->route('blog.admin.categories.edit', [$category->id])
                 ->with(['success' => 'Успешно сохранено']);
@@ -69,7 +60,6 @@ class CategoryController extends BaseController
                 ->withInput();   
         }
     }
-
     /**
      * Display the specified resource.
      *
@@ -80,21 +70,25 @@ class CategoryController extends BaseController
     // {
     //     //
     // }
-
     /**
      * Show the form for editing the specified resource.
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($id, BlogCategoryRepository $categoryRepository)
     {
-        $category = BlogCategory::findOrFail($id);
-        $categoriesList = $this->categoriesList;
+        // $category = BlogCategory::findOrFail($id);
+        // $categoriesList = $this->categoriesList;
+        $category = $categoryRepository->getEdit($id);
+        if(empty($category)){
+            abort(404);
+        }
+
+        $categoriesList = $categoryRepository->getForComboBox();
 
         return view('blog.admin.category.edit', compact('categoriesList', 'category'));
     }
-
     /**
      * Update the specified resource in storage.
      *
@@ -104,13 +98,8 @@ class CategoryController extends BaseController
      */
     public function update(BlogCategoryUpdateRequest $request, $id)
     {   
-
         $categoryUpdate = BlogCategory::find($id);
-
-        if(empty($categoryUpdate['slug'])){
-            $categoryUpdate['slug'] = Str::slug($categoryUpdate['title']);
-        }
-
+        
         if(empty($categoryUpdate)){
             return back(301)
                 ->withErrors(['msg' => 'Запись id=[{$id}] не найдена'])
@@ -127,7 +116,6 @@ class CategoryController extends BaseController
                 ->withInput();   
         }
     }
-
     /**
      * Remove the specified resource from storage.
      *

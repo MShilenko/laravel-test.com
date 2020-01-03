@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers\Blog\Admin;
+
 use App\Http\Requests\BlogCategoryCreateRequest;
 use App\Http\Requests\BlogCategoryUpdateRequest;
 use App\Models\BlogCategory;
@@ -10,14 +11,22 @@ use Illuminate\Http\Request;
 class CategoryController extends BaseController
 {
     /**
+     * @var BlogCategoryRepository
+     */
+    private $blogCategoryRepository;
+    /**
      * Construct.
      *
      * @return void
      */
     public function __construct()
     {
+        parent::__construct();
+
         $this->middleware('createSlug')->only('update', 'store');
-        $this->categoriesList = BlogCategory::all();
+
+        $this->blogCategoryRepository = app(BlogCategoryRepository::class);
+        //$this->categoriesList = BlogCategory::all();
     }
     /**
      * Display a listing of the resource.
@@ -26,7 +35,9 @@ class CategoryController extends BaseController
      */
     public function index()
     {
-        $categories = BlogCategory::paginate(5);
+        //$categories = BlogCategory::paginate(5);
+        $categories = $this->blogCategoryRepository->getAllWithPaginate(5);
+
         return view('blog.admin.category.index', compact('categories'));
     }
     /**
@@ -37,7 +48,8 @@ class CategoryController extends BaseController
     public function create()
     {
         $category = new BlogCategory();
-        $categoriesList = $this->categoriesList;
+        $categoriesList = $this->blogCategoryRepository->getForComboBox();
+
         return view('blog.admin.category.edit', compact('categoriesList', 'category'));
     }
     /**
@@ -78,8 +90,6 @@ class CategoryController extends BaseController
      */
     public function edit($id, BlogCategoryRepository $categoryRepository)
     {
-        // $category = BlogCategory::findOrFail($id);
-        // $categoriesList = $this->categoriesList;
         $category = $categoryRepository->getEdit($id);
         if(empty($category)){
             abort(404);
@@ -98,7 +108,7 @@ class CategoryController extends BaseController
      */
     public function update(BlogCategoryUpdateRequest $request, $id)
     {   
-        $categoryUpdate = BlogCategory::find($id);
+        $categoryUpdate = $this->blogCategoryRepository->getEdit($id);
         
         if(empty($categoryUpdate)){
             return back(301)
@@ -116,14 +126,4 @@ class CategoryController extends BaseController
                 ->withInput();   
         }
     }
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    // public function destroy($id)
-    // {
-    //     //
-    // }
 }

@@ -40,7 +40,7 @@
 					</div>
 					<div class="form-group">
 						<label for="content_raw">Описание</label>
-						<textarea name="description" id="content_raw" rows="6" class="form-control">{{ old('content_raw', $post->content_raw) }}</textarea>
+						<textarea name="content_raw" id="content_raw" rows="6" class="form-control">{{ old('content_raw', $post->content_raw) }}</textarea>
 					</div>
 				</div>	
 			</div>	

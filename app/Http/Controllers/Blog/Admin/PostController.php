@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Blog\Admin;
 
+use App\Http\Requests\BlogPostCreateRequest;
 use App\Http\Requests\BlogPostUpdateRequest;
 use App\Models\BlogPost;
 use App\Repositories\BlogCategoryRepository;
@@ -50,7 +51,10 @@ class PostController extends BaseController
      */
     public function create()
     {
-       
+        $post = new BlogPost();
+        $categoriesList = $this->blogCategoryRepository->getForComboBox();
+
+        return view('blog.admin.posts.edit', compact('categoriesList', 'post'));   
     }
     /**
      * Store a newly created resource in storage.
@@ -58,9 +62,19 @@ class PostController extends BaseController
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(BlogCategoryCreateRequest $request)
+    public function store(BlogPostCreateRequest $request)
     {        
-       
+        $post = (new BlogPost())->create($request->input());
+
+        if($post){
+            return redirect()
+                ->route('blog.admin.posts.edit', [$post->id])
+                ->with(['success' => 'Успешно сохранено']);
+        }else{
+            return back(301)
+                ->withErrors(['msg' => 'Ошибка сохранения'])
+                ->withInput();   
+        }
     }
     /**
      * Display the specified resource.
@@ -125,6 +139,7 @@ class PostController extends BaseController
      */
     public function destroy($id)
     {   
-        
+        BlogPost::where('id', $id)->delete();
+        return redirect()->route('blog.admin.posts.index');
     }
 }

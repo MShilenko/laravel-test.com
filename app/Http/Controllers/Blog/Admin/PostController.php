@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers\Blog\Admin;
 
+use App\Http\Requests\BlogPostUpdateRequest;
 use App\Models\BlogPost;
+use App\Repositories\BlogCategoryRepository;
 use App\Repositories\BlogPostRepository;
 use Illuminate\Http\Request;
 
@@ -13,6 +15,10 @@ class PostController extends BaseController
      */
     private $blogPostRepository;
     /**
+     * @var BlogCategoryRepository
+     */
+    private $blogCategoryRepository;
+    /**
      * Construct.
      *
      * @return void
@@ -21,9 +27,10 @@ class PostController extends BaseController
     {
         parent::__construct();
 
-        //$this->middleware('createSlug')->only('update', 'store');
+        $this->middleware(['createSlug'])->only('update', 'store');
 
         $this->blogPostRepository = app(BlogPostRepository::class);
+        $this->blogCategoryRepository = app(BlogCategoryRepository::class);
     }
     /**
      * Display a listing of the resource.
@@ -71,9 +78,43 @@ class PostController extends BaseController
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id, BlogPostRepository $categoryRepository)
+    public function edit($id)
     {
-       
+        $post = $this->blogPostRepository->getEdit($id);
+        if(empty($post)){
+            abort(404);
+        }
+
+        $categoriesList = $this->blogCategoryRepository->getForComboBox();
+
+        return view('blog.admin.posts.edit', compact('categoriesList', 'post'));       
+    }
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Requests\BlogPostUpdateRequest  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function update(BlogPostUpdateRequest $request, $id)
+    {   
+        $postUpdate = $this->blogPostRepository->getEdit($id);
+        
+        if(empty($postUpdate)){
+            return back(301)
+                ->withErrors(['msg' => 'Запись id=[{$id}] не найдена'])
+                ->withInput();
+        }
+        
+        if($postUpdate->update($request->all())){
+            return redirect()
+                ->route('blog.admin.posts.edit', $postUpdate->id)
+                ->with(['success' => 'Успешно сохранено']);
+        }else{
+            return back(301)
+                ->withErrors(['msg' => 'Ошибка сохранения'])
+                ->withInput();   
+        }
     }
     /**
      * Update the specified resource in storage.
@@ -82,7 +123,7 @@ class PostController extends BaseController
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(BlogCategoryUpdateRequest $request, $id)
+    public function destroy($id)
     {   
         
     }

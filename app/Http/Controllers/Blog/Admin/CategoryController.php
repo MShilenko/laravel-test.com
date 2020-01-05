@@ -14,6 +14,7 @@ class CategoryController extends BaseController
      * @var BlogCategoryRepository
      */
     private $blogCategoryRepository;
+    
     /**
      * Construct.
      *

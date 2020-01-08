@@ -11,6 +11,10 @@ class BlogPost extends Model
 
     const UNKNOWN_USER = 1;
 
+    protected $attributes = [
+        'user_id' => self::UNKNOWN_USER,
+    ];
+
     protected $fillable = [
     	'title',
     	'slug',

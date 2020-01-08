@@ -23,6 +23,10 @@ Route::group(['namespace' => 'Blog', 'prefix' => 'blog'], function(){
 	Route::resource('posts', 'PostController')->names('blog.posts');	
 });
 
+Route::group(['prefix' => 'digging_geeper'], function(){
+	Route::get('collections', 'DiggingDeeperController@collections')->name('digging_geeper.collections');	
+});
+
 //Route::resource('rest', 'RestTestController')->names('restTest');
 
 $groupData = [

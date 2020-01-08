@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Blog\Admin;
 
 use App\Http\Requests\BlogPostCreateRequest;
 use App\Http\Requests\BlogPostUpdateRequest;
+use App\Jobs\BlogPostAfterCreateJob;
+use App\Jobs\BlogPostAfterDeleteJob;
 use App\Models\BlogPost;
 use App\Repositories\BlogCategoryRepository;
 use App\Repositories\BlogPostRepository;
@@ -67,6 +69,8 @@ class PostController extends BaseController
         $post = (new BlogPost())->create($request->input());
 
         if($post){
+            BlogPostAfterCreateJob::dispatch($post);
+
             return redirect()
                 ->route('blog.admin.posts.edit', [$post->id])
                 ->with(['success' => 'Успешно сохранено']);
@@ -139,7 +143,14 @@ class PostController extends BaseController
      */
     public function destroy($id)
     {   
-        BlogPost::where('id', $id)->delete();
-        return redirect()->route('blog.admin.posts.index');
+        if(BlogPost::destroy($id)){
+            BlogPostAfterDeleteJob::dispatch($id);
+
+            return redirect()
+                ->route('blog.admin.posts.index')
+                ->with(['success' => "Запись id[$id] удалена"]);
+        }else{
+            return back()->withErrors(['msg' => 'Ошибка удаления']);
+        }
     }
 }

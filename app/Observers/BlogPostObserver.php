@@ -21,7 +21,7 @@ class BlogPostObserver
     {
         $this->setPublishedAt($blogPost);
         $this->setHtml($blogPost);
-        $this->setUser($blogPost);
+       // $this->setUser($blogPost);
     }
 
     /**

@@ -3,12 +3,14 @@
 @section('content')
 	@php /** @var array $category |App|Models|BlogCategory */ @endphp
 	@if($category->exists)
-		<form method="POST" action="{{ route('blog.admin.categories.update', $category->id) }}">
-		@method('PATCH')
+		{!! Form::open([
+				'route' => ['blog.admin.categories.update', $category->id],
+				'method' => 'patch'
+			]) 
+		!!}
 	@else
-		<form method="POST" action="{{ route('blog.admin.categories.store') }}">
+		{!! Form::open(['route' => 'blog.admin.categories.store']) !!}
 	@endif
-			@csrf
 			<div class="container">
 				@php /** @var $errors |Illuminate|Support|ViewErrorBag */ @endphp
 				<div class="row justify-content-center">
@@ -28,5 +30,5 @@
 					</div>
 				</div>	
 			</div>	
-		</form>	
+		{!! Form::close() !!}	
 @endsection

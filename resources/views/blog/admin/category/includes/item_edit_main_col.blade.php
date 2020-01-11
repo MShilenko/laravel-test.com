@@ -1,7 +1,7 @@
 @php 
 /** 
  * @var array $category |App|Models|BlogCategory 
- * @var array $categoriesList |App|Models|BlogCategory 
+ * @var array $categoriesForSelectList |App|Models|BlogCategory 
  */ 
 @endphp
 
@@ -11,27 +11,20 @@
 			<div class="card">
 				<div class="card-body">	
 					<div class="form-group">
-						<label for="title">Заголовок</label>
-						<input name="title" value="{{ $category->title }}" id="title" type="text" class="form-control" required>
+						{{ Form::label('title', 'Заголовок') }}
+						{{ Form::text('title', $category->title, ['class' => 'form-control']) }}
 					</div>	
 					<div class="form-group">
-						<label for="slug">Идентификатор</label>
-						<input name="slug" value="{{ $category->slug }}" id="slug" type="text" class="form-control">
+						{{ Form::label('slug', 'Идентификатор') }}
+						{{ Form::text('slug', $category->slug, ['class' => 'form-control']) }}
 					</div>
 					<div class="form-group">
-						<label for="title">Родитель</label>
-						<select name="parent_id" value="{{ $category->parent_id }}" id="parent_id" type="text" class="form-control" placeholder="Выберите категорию" required>
-							@foreach($categoriesList as $categoryList)
-								<option value="{{ $categoryList->id }}"
-									@if($categoryList->id == $category->parent_id) selected @endif>
-										{{ $categoryList->id_title }}
-									</option>
-							@endforeach
-						</select>
+						{{ Form::label('parent_id', 'Родитель') }}
+						{{ Form::select('parent_id', $categoriesForSelectList, $category->parent_id, ['class' => 'form-control']) }}
 					</div>
 					<div class="form-group">
-						<label for="title">Описание</label>
-						<textarea name="description" value="{{ old('description', $category->description) }}" id="description" rows="3" class="form-control">{{ old('description', $category->description) }}</textarea>
+						{{ Form::label('description', 'Описание') }}
+						{{ Form::textarea('description', $category->description, ['class' => 'form-control', 'rows' => 3]) }}
 					</div>
 				</div>	
 			</div>	

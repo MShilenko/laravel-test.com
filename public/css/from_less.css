@@ -46,3 +46,62 @@
   background: #ecf0f1;
   padding: 15px;
 }
+.cust-buttons .cust-buttons-block {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+          flex-flow: row wrap;
+  -webkit-box-pack: center;
+          justify-content: center;
+  -webkit-box-align: baseline;
+          align-items: baseline;
+}
+.cust-buttons .my-button {
+  width: auto;
+  text-align: center;
+  cursor: pointer;
+  margin: 10px 10px 0px 0px;
+}
+.cust-buttons .cust-button {
+  background: #e0e0e0;
+  color: #333;
+  font-size: 14px;
+  line-height: 20px;
+  padding: 6px 12px;
+}
+.cust-buttons .cust-button:hover {
+  background: #e8e8e8;
+  color: #333;
+}
+.cust-buttons .cust-button.blue {
+  background: #3b83c0;
+  color: #fff;
+}
+.cust-buttons .cust-button.blue:hover {
+  background: #458ac6;
+  color: #fff;
+}
+.cust-buttons .cust-button.black {
+  background: #404245;
+  color: #fff;
+}
+.cust-buttons .cust-button.black:hover {
+  background: #1b1c1d;
+  color: #fff;
+}
+.cust-buttons .cust-button.xs {
+  font-size: 10px;
+  line-height: 20px;
+  padding: 2px 4px;
+}
+.cust-buttons .cust-button.xl {
+  font-size: 18px;
+  line-height: 20px;
+  padding: 10px 16px;
+}
+.cust-buttons .cust-buttons-head {
+  font-size: 2em;
+  background: #ecf0f1;
+  padding: 15px;
+}

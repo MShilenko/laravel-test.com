@@ -17,6 +17,25 @@
                 <div class="g_item">9</div>
             </div>
         </div>
+
+        <div class="col-md-12 cust-buttons">
+            <div class="cust-buttons-head">Кнопки</div>
+            <div class="cust-buttons-block">
+                <div class="my-button cust-button xs">cust-button xs</div>
+                <div class="my-button cust-button blue xs">cust-button blue xs</div>
+                <div class="my-button cust-button black xs">cust-button black xs</div>
+            </div>
+            <div class="cust-buttons-block">
+                <div class="my-button cust-button">cust-button</div>
+                <div class="my-button cust-button blue">cust-button blue</div>
+                <div class="my-button cust-button black">cust-button black</div>
+            </div>    
+            <div class="cust-buttons-block">    
+                <div class="my-button cust-button xl">cust-button xl</div>
+                <div class="my-button cust-button blue xl">cust-button blue xl</div>
+                <div class="my-button cust-button black xl">cust-button black xl</div>
+            </div>
+        </div>
     </div>
 </div>
 @endsection

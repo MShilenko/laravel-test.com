@@ -1,16 +1,22 @@
 @import "_variables";
 
-.simple-flex-row-block-with-background(@background-color: #fff){
-	display: flex;
+.simple-flex-row-block-with-background(@background-color: #fff) {
+    display: flex;
     flex-flow: row wrap;
     justify-content: flex-start;
     background: @background-color;
 }
 
+.simple-head() {
+    font-size: 2em;
+    background: #ecf0f1;
+    padding: 15px;
+}
+
 .gallery {
 
     .gallery-block {
-    	.simple-flex-row-block-with-background(#bdc3c7);
+        .simple-flex-row-block-with-background(#bdc3c7);
 
         .g_item {
             font-weight: bold;
@@ -42,8 +48,64 @@
     }
 
     .gallery-head {
-        font-size: 2em;
-        background: #ecf0f1;
-        padding: 15px;
+        .simple-head();
+    }
+}
+
+.cust-buttons {
+    .cust_button-color-settings(@background: #e0e0e0, @color: #333, @background-hover: #e8e8e8, @color-hover: #333) {
+        background: @background;
+        color: @color;
+
+        &:hover {
+            background: @background-hover;
+            color: @color-hover;
+        }
+    }
+
+    .cust_button-size-settings(@font-size: 14px, @line-height: 20px, @padding: 6px 12px) {
+        font-size: @font-size;
+        line-height: @line-height;
+        padding: @padding;
+    }
+
+    .cust-buttons-block {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+        align-items: baseline;
+    }
+
+    .my-button {
+        width: auto;
+        text-align: center;
+        cursor: pointer;
+        margin: 10px 10px 0px 0px;
+    }
+
+    .cust-button {
+        .cust_button-color-settings();
+        .cust_button-size-settings();
+
+        &.blue {
+            .cust_button-color-settings(#3b83c0, #fff, #458ac6, #fff);
+        }
+
+        &.black {
+            .cust_button-color-settings(#404245, #fff, #1b1c1d, #fff);
+        }
+
+        &.xs {
+            .cust_button-size-settings(10px, 20px, 2px 4px);
+        }
+
+        &.xl {
+            .cust_button-size-settings(18px, 20px, 10px 16px);
+        }
+
+    }
+
+    .cust-buttons-head {
+        .simple-head();
     }
 }

@@ -109,3 +109,16 @@
         .simple-head();
     }
 }
+
+.generate-color-classes(@i: 1) when (@i =< length(@listNames)){
+    @color-name: extract(@listNames, @i);
+    @color: extract(@listColors, @i);
+
+    .color-@{color-name}{
+        color: @color;
+    }
+
+    .generate-color-classes(@i + 1);
+}
+
+.generate-color-classes();

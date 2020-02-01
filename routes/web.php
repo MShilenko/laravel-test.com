@@ -18,6 +18,7 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/less_test', 'LessTestController@index')->name('lessTest');
 
 Route::group(['namespace' => 'Blog', 'prefix' => 'blog'], function(){
 	Route::resource('posts', 'PostController')->names('blog.posts');	

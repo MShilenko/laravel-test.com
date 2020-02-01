@@ -54,7 +54,8 @@ class PostController extends BaseController
     public function create()
     {
         $post = new BlogPost();
-        $categoriesList = $this->blogCategoryRepository->getForComboBox();
+        //$categoriesList = $this->blogCategoryRepository->getForComboBox();
+        $categoriesList = $this->blogCategoryRepository->getForSelectList();
 
         return view('blog.admin.posts.edit', compact('categoriesList', 'post'));   
     }
@@ -103,7 +104,8 @@ class PostController extends BaseController
             abort(404);
         }
 
-        $categoriesList = $this->blogCategoryRepository->getForComboBox();
+        //$categoriesList = $this->blogCategoryRepository->getForComboBox();
+        $categoriesList = $this->blogCategoryRepository->getForSelectList();
 
         return view('blog.admin.posts.edit', compact('categoriesList', 'post'));       
     }

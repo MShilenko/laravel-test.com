@@ -46,6 +46,23 @@ class BlogCategoryRepository extends CoreRepository
 	/**
 	 * @return Collection
 	 */
+	public function getForSelectList($id = null)
+	{
+		$fields = implode(', ', [
+			'id',
+			'CONCAT (id, ". ", title) AS id_title'
+		]);
+
+		$result = $this->startConditions($id)::where('id', '!=', $id)
+			->selectRaw($fields)
+			->pluck('id_title', 'id');
+
+		return $result;	
+	}
+
+	/**
+	 * @return Collection
+	 */
 	public function getAllWithPaginate($perPage = null)
 	{
 		$fields = ['id', 'title', 'parent_id'];

@@ -49,9 +49,10 @@ class CategoryController extends BaseController
     public function create()
     {
         $category = new BlogCategory();
-        $categoriesList = $this->blogCategoryRepository->getForComboBox();
+       // $categoriesList = $this->blogCategoryRepository->getForComboBox();
+        $categoriesForSelectList = $this->blogCategoryRepository->getForSelectList($category->id);
 
-        return view('blog.admin.category.edit', compact('categoriesList', 'category'));
+        return view('blog.admin.category.edit', compact('categoriesList', 'categoriesForSelectList', 'category'));
     }
     /**
      * Store a newly created resource in storage.
@@ -96,9 +97,10 @@ class CategoryController extends BaseController
             abort(404);
         }
 
-        $categoriesList = $categoryRepository->getForComboBox();
+        //$categoriesList = $categoryRepository->getForComboBox();
+        $categoriesForSelectList = $this->blogCategoryRepository->getForSelectList($id);
 
-        return view('blog.admin.category.edit', compact('categoriesList', 'category'));
+        return view('blog.admin.category.edit', compact('categoriesForSelectList', 'category'));
     }
     /**
      * Update the specified resource in storage.

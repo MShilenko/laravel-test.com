@@ -3,10 +3,13 @@
 @section('content')
 	@php /** @var array $post |App|Models|Postposts */ @endphp
 	@if($post->exists)
-		<form method="POST" action="{{ route('blog.admin.posts.update', $post->id) }}">
-		@method('PATCH')
+		{!! Form::open([
+				'route' => ['blog.admin.posts.update', $post->id],
+				'method' => 'patch'
+			]) 
+		!!}
 	@else
-		<form method="POST" action="{{ route('blog.admin.posts.store') }}">
+		{!! Form::open(['route' => 'blog.admin.posts.store']) !!}
 	@endif
 			@csrf
 			<div class="container">
@@ -21,12 +24,14 @@
 					</div>
 				</div>	
 			</div>	
-		</form>	
+		{!! Form::close() !!}	
 		@if($post->exists)
-			<form class="row justify-content-center" method="POST" action="{{ route('blog.admin.posts.update', $post->id) }}">
-				@method('DELETE')
-				@csrf
-				<button type="submit" class="btn btn-danger">Удалить</button>
-			</form>
+			{!! Form::open([
+					'route' => ['blog.admin.posts.destroy', $post->id],
+					'method' => 'delete'
+				]) 
+			!!}
+				{{ Form::submit('Удалить', ['class' => 'btn btn-danger']) }}
+			{!! Form::close() !!}
 		@endif
 @endsection

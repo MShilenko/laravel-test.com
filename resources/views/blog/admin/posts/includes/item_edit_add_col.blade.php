@@ -9,7 +9,7 @@
 		<div class="col-md-12">
 			<div class="card">
 				<div class="card-body">
-					<button type="submit" class="btn btn-primary">Сохранить</button>
+					{{ Form::submit('Сохранить', ['class' => 'btn btn-primary']) }}
 				</div>	
 			</div>	
 		</div>
@@ -27,17 +27,17 @@
 				<div class="card">
 					<div class="card-body">	
 						<div class="form-group">
-							<label for="created_at">Создано</label>
-							<input name="created_at" value="{{ $post->created_at }}" class="form-control" disabled>
+							{{ Form::label('created_at', 'Создано') }}
+							{{ Form::text('created_at', $post->created_at, ['class' => 'form-control', 'disabled' => true]) }}
 						</div>	
 						<div class="form-group">
-							<label for="updated_at">Изменено</label>
-							<input name="updated_at" value="{{ $post->updated_at }}" class="form-control" disabled>
+							{{ Form::label('updated_at', 'Изменено') }}
+							{{ Form::text('updated_at', $post->updated_at, ['class' => 'form-control', 'disabled' => true]) }}
 						</div>	
 						<div class="form-group">
-							<label for="published_at">Опубликовано</label>
-							<input name="published_at" value="{{ ($post->is_published) ? $post->published_at : '' }}" class="form-control" disabled>
-						</div>	
+							{{ Form::label('published_at', 'Опубликовано') }}
+							{{ Form::text('published_at', ($post->is_published) ? $post->published_at : '', ['class' => 'form-control', 'disabled' => true]) }}
+						</div>
 				</div>
 			</div>
 		</div>	

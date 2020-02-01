@@ -11,36 +11,29 @@
 			<div class="card">
 				<div class="card-body">	
 					<div class="form-check">
-						<input name="is_published" type="hidden" value="0">
-						<input class="form-check-input" name="is_published" type="checkbox" value="1" @if($post->is_published) checked="checked" @endif>
-						<label class="form-check-label" for="is_published">Опубликовано</label>
+						{{ Form::hidden('is_published', 0) }}
+						{{ Form::checkbox('is_published', 1, $post->is_published, ['class' => 'form-check-input']) }}
+						{{ Form::label('is_published', 'Опубликовано', ['class' => 'form-check-label']) }}
 					</div>
 					<div class="form-group">
-						<label for="title">Заголовок</label>
-						<input name="title" value="{{ $post->title }}" id="title" type="text" class="form-control" required>
+						{{ Form::label('title', 'Заголовок') }}
+						{{ Form::text('title', $post->title, ['class' => 'form-control']) }}
 					</div>	
 					<div class="form-group">
-						<label for="slug">ЧПУ</label>
-						<input name="slug" value="{{ $post->slug }}" id="slug" type="text" class="form-control">
+						{{ Form::label('slug', 'ЧПУ') }}
+						{{ Form::text('slug', $post->slug, ['class' => 'form-control']) }}
 					</div>
 					<div class="form-group">
-						<label for="category_id">Родитель</label>
-						<select name="category_id" id="category_id" type="text" class="form-control" placeholder="Выберите категорию" required>
-							@foreach($categoriesList as $categoryList)
-								<option value="{{ $categoryList->id }}"
-									@if($categoryList->id == $post->category_id) selected @endif>
-										{{ $categoryList->id_title }}
-									</option>
-							@endforeach
-						</select>
+						{{ Form::label('category_id', 'Родитель') }}
+						{{ Form::select('category_id', $categoriesList, $post->category_id, ['class' => 'form-control']) }}
 					</div>
 					<div class="form-group">
-						<label for="excerpt">Превью</label>
-						<textarea name="excerpt" id="excerpt" rows="2" class="form-control">{{ old('excerpt', $post->excerpt) }}</textarea>
+						{{ Form::label('excerpt', 'Превью') }}
+						{{ Form::textarea('excerpt', $post->excerpt, ['class' => 'form-control', 'rows' => 2]) }}
 					</div>
 					<div class="form-group">
-						<label for="content_raw">Описание</label>
-						<textarea name="content_raw" id="content_raw" rows="6" class="form-control">{{ old('content_raw', $post->content_raw) }}</textarea>
+						{{ Form::label('content_raw', 'Описание') }}
+						{{ Form::textarea('content_raw', $post->content_raw, ['class' => 'form-control', 'rows' => 3]) }}
 					</div>
 				</div>	
 			</div>	

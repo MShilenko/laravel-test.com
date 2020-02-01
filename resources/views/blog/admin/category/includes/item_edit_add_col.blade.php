@@ -9,7 +9,7 @@
 		<div class="col-md-12">
 			<div class="card">
 				<div class="card-body">
-					<button type="submit" class="btn btn-primary">Сохранить</button>
+					{{ Form::submit('Сохранить', ['class' => 'btn btn-primary']) }}
 				</div>	
 			</div>	
 		</div>
@@ -27,16 +27,16 @@
 				<div class="card">
 					<div class="card-body">	
 						<div class="form-group">
-							<label for="title">Создано</label>
-							<input name="title" value="{{ $category->created_at }}" class="form-control" disabled>
+							{{ Form::label('created_at', 'Создано') }}
+							{{ Form::text('created_at', $category->created_at, ['class' => 'form-control', 'disabled' => true]) }}
 						</div>	
 						<div class="form-group">
-							<label for="title">Изменено</label>
-							<input name="title" value="{{ $category->updated_at }}" class="form-control" disabled>
+							{{ Form::label('updated_at', 'Изменено') }}
+							{{ Form::text('updated_at', $category->updated_at, ['class' => 'form-control', 'disabled' => true]) }}
 						</div>	
 						<div class="form-group">
-							<label for="title">Удалено</label>
-							<input name="title" value="{{ $category->deleted_at }}" class="form-control" disabled>
+							{{ Form::label('deleted_at', 'Удалено') }}
+							{{ Form::text('deleted_at', $category->deleted_at, ['class' => 'form-control', 'disabled' => true]) }}
 						</div>	
 				</div>
 			</div>

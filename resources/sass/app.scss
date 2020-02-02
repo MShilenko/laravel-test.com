@@ -6,3 +6,27 @@
 
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
+
+%simple-flex-row-block {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+}
+
+.gallery {
+
+    .gallery-block {
+        @extend %simple-flex-row-block;
+        background: $g-item-background;
+    }
+}    
+
+.cust-buttons {
+
+  @each $class, $color in $colors-list {
+
+    & .clr-#{$class}{
+		color: #{$color};
+    }
+  }
+}

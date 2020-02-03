@@ -18,15 +18,64 @@
     .gallery-block {
         @extend %simple-flex-row-block;
         background: $g-item-background;
+
+        @media(max-width: 760px) {
+            & .item {
+                flex: 1 0 100%;
+            }
+        }
     }
-}    
+}
 
 .cust-buttons {
 
-  @each $class, $color in $colors-list {
+    @mixin cust_button-color-settings($background: #e0e0e0, $color: #333, $background-hover: #e8e8e8, $color-hover: #333) {
+        background: $background;
+        color: $color;
 
-    & .clr-#{$class}{
-		color: #{$color};
+        &:hover {
+            background: $background-hover;
+            color: $color-hover;
+        }
     }
-  }
+
+    @mixin cust_button-size-settings($font-size: 14px, $line-height: 20px, $padding: 6px 12px) {
+        font-size: $font-size;
+        line-height: $line-height;
+        padding: $padding;
+    }
+
+    @each $class,
+    $color in $colors-list {
+
+        & .clr-#{$class} {
+            color: #{$color};
+        }
+    }
+
+    .cust-button {
+        @include cust_button-color-settings();
+        @include cust_button-size-settings();
+
+        &.blue {
+            @include cust_button-color-settings(#3b83c0, #fff, #458ac6, #fff);
+        }
+
+        &.black {
+            @include cust_button-color-settings(#404245, #fff, #1b1c1d, #fff);
+        }
+
+        &.xs {
+            @include cust_button-size-settings(10px, 20px, 2px 4px);
+        }
+
+        &.xl {
+            @include cust_button-size-settings(18px, 20px, 10px 16px);
+        }
+
+    }
 }
+
+
+   
+

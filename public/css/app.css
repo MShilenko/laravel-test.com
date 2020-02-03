@@ -11370,6 +11370,13 @@ a.text-dark:focus {
   background: #d8d8d8;
 }
 
+@media (max-width: 760px) {
+  .gallery .gallery-block .item {
+    -webkit-box-flex: 1;
+            flex: 1 0 100%;
+  }
+}
+
 .cust-buttons .clr-black {
   color: #000000;
 }
@@ -11388,5 +11395,50 @@ a.text-dark:focus {
 
 .cust-buttons .clr-blue {
   color: #0000ff;
+}
+
+.cust-buttons .cust-button {
+  background: #e0e0e0;
+  color: #333;
+  font-size: 14px;
+  line-height: 20px;
+  padding: 6px 12px;
+}
+
+.cust-buttons .cust-button:hover {
+  background: #e8e8e8;
+  color: #333;
+}
+
+.cust-buttons .cust-button.blue {
+  background: #3b83c0;
+  color: #fff;
+}
+
+.cust-buttons .cust-button.blue:hover {
+  background: #458ac6;
+  color: #fff;
+}
+
+.cust-buttons .cust-button.black {
+  background: #404245;
+  color: #fff;
+}
+
+.cust-buttons .cust-button.black:hover {
+  background: #1b1c1d;
+  color: #fff;
+}
+
+.cust-buttons .cust-button.xs {
+  font-size: 10px;
+  line-height: 20px;
+  padding: 2px 4px;
+}
+
+.cust-buttons .cust-button.xl {
+  font-size: 18px;
+  line-height: 20px;
+  padding: 10px 16px;
 }
 

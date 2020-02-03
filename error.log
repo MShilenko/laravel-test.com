@@ -9854,3 +9854,81 @@
 [Thu Jan 30 14:26:54.702987 2020] [authz_core:debug] [pid 3906] mod_authz_core.c(809): [client 127.0.0.1:47962] AH01626: authorization result of <RequireAny>: granted
 [Thu Jan 30 14:26:54.754197 2020] [authz_core:debug] [pid 3909] mod_authz_core.c(809): [client 127.0.0.1:47970] AH01626: authorization result of Require all granted: granted, referer: http://laravel-test.com/less_test
 [Thu Jan 30 14:26:54.754214 2020] [authz_core:debug] [pid 3909] mod_authz_core.c(809): [client 127.0.0.1:47970] AH01626: authorization result of <RequireAny>: granted, referer: http://laravel-test.com/less_test
+[Fri Jan 31 09:31:41.991125 2020] [authz_core:debug] [pid 3577] mod_authz_core.c(809): [client 127.0.0.1:54862] AH01626: authorization result of Require all granted: granted
+[Fri Jan 31 09:31:42.107882 2020] [authz_core:debug] [pid 3577] mod_authz_core.c(809): [client 127.0.0.1:54862] AH01626: authorization result of <RequireAny>: granted
+[Fri Jan 31 09:31:42.172225 2020] [authz_core:debug] [pid 3577] mod_authz_core.c(809): [client 127.0.0.1:54862] AH01626: authorization result of Require all granted: granted
+[Fri Jan 31 09:31:42.172259 2020] [authz_core:debug] [pid 3577] mod_authz_core.c(809): [client 127.0.0.1:54862] AH01626: authorization result of <RequireAny>: granted
+[Fri Jan 31 09:31:53.058253 2020] [deflate:debug] [pid 3577] mod_deflate.c(853): [client 127.0.0.1:54862] AH01384: Zlib: Compressed 37666 to 10088 : URL /index.php
+[Fri Jan 31 09:32:10.739151 2020] [authz_core:debug] [pid 3579] mod_authz_core.c(809): [client 127.0.0.1:54880] AH01626: authorization result of Require all granted: granted
+[Fri Jan 31 09:32:10.739206 2020] [authz_core:debug] [pid 3579] mod_authz_core.c(809): [client 127.0.0.1:54880] AH01626: authorization result of <RequireAny>: granted
+[Fri Jan 31 09:32:10.739282 2020] [authz_core:debug] [pid 3579] mod_authz_core.c(809): [client 127.0.0.1:54880] AH01626: authorization result of Require all granted: granted
+[Fri Jan 31 09:32:10.739289 2020] [authz_core:debug] [pid 3579] mod_authz_core.c(809): [client 127.0.0.1:54880] AH01626: authorization result of <RequireAny>: granted
+[Fri Jan 31 09:32:11.834349 2020] [deflate:debug] [pid 3579] mod_deflate.c(853): [client 127.0.0.1:54880] AH01384: Zlib: Compressed 42815 to 11388 : URL /index.php
+[Fri Jan 31 09:32:12.224607 2020] [authz_core:debug] [pid 3579] mod_authz_core.c(809): [client 127.0.0.1:54880] AH01626: authorization result of Require all granted: granted, referer: http://laravel-test.com/less_test
+[Fri Jan 31 09:32:12.224646 2020] [authz_core:debug] [pid 3579] mod_authz_core.c(809): [client 127.0.0.1:54880] AH01626: authorization result of <RequireAny>: granted, referer: http://laravel-test.com/less_test
+[Fri Jan 31 09:32:12.224810 2020] [deflate:debug] [pid 3579] mod_deflate.c(853): [client 127.0.0.1:54880] AH01384: Zlib: Compressed 2239 to 558 : URL /css/from_less.css, referer: http://laravel-test.com/less_test
+[Fri Jan 31 09:32:12.228341 2020] [authz_core:debug] [pid 3579] mod_authz_core.c(809): [client 127.0.0.1:54880] AH01626: authorization result of Require all granted: granted, referer: http://laravel-test.com/less_test
+[Fri Jan 31 09:32:12.228361 2020] [authz_core:debug] [pid 3579] mod_authz_core.c(809): [client 127.0.0.1:54880] AH01626: authorization result of <RequireAny>: granted, referer: http://laravel-test.com/less_test
+[Fri Jan 31 09:32:12.305968 2020] [authz_core:debug] [pid 3580] mod_authz_core.c(809): [client 127.0.0.1:54882] AH01626: authorization result of Require all granted: granted, referer: http://laravel-test.com/less_test
+[Fri Jan 31 09:32:12.367401 2020] [authz_core:debug] [pid 3580] mod_authz_core.c(809): [client 127.0.0.1:54882] AH01626: authorization result of <RequireAny>: granted, referer: http://laravel-test.com/less_test
+[Fri Jan 31 09:32:12.370790 2020] [deflate:debug] [pid 3579] mod_deflate.c(853): [client 127.0.0.1:54880] AH01384: Zlib: Compressed 200625 to 25758 : URL /css/app.css, referer: http://laravel-test.com/less_test
+[Fri Jan 31 09:32:12.973459 2020] [deflate:debug] [pid 3580] mod_deflate.c(853): [client 127.0.0.1:54882] AH01384: Zlib: Compressed 1456759 to 335582 : URL /js/app.js, referer: http://laravel-test.com/less_test
+[Fri Jan 31 09:36:05.289627 2020] [authz_core:debug] [pid 3581] mod_authz_core.c(809): [client 127.0.0.1:55104] AH01626: authorization result of Require all granted: granted
+[Fri Jan 31 09:36:05.289690 2020] [authz_core:debug] [pid 3581] mod_authz_core.c(809): [client 127.0.0.1:55104] AH01626: authorization result of <RequireAny>: granted
+[Fri Jan 31 09:36:05.334956 2020] [authz_core:debug] [pid 3581] mod_authz_core.c(809): [client 127.0.0.1:55104] AH01626: authorization result of Require all granted: granted
+[Fri Jan 31 09:36:05.335046 2020] [authz_core:debug] [pid 3581] mod_authz_core.c(809): [client 127.0.0.1:55104] AH01626: authorization result of <RequireAny>: granted
+[Fri Jan 31 09:42:16.738159 2020] [authz_core:debug] [pid 7456] mod_authz_core.c(809): [client 127.0.0.1:55196] AH01626: authorization result of Require all granted: granted
+[Fri Jan 31 09:42:16.738202 2020] [authz_core:debug] [pid 7456] mod_authz_core.c(809): [client 127.0.0.1:55196] AH01626: authorization result of <RequireAny>: granted
+[Fri Jan 31 09:42:16.738263 2020] [authz_core:debug] [pid 7456] mod_authz_core.c(809): [client 127.0.0.1:55196] AH01626: authorization result of Require all granted: granted
+[Fri Jan 31 09:42:16.738269 2020] [authz_core:debug] [pid 7456] mod_authz_core.c(809): [client 127.0.0.1:55196] AH01626: authorization result of <RequireAny>: granted
+[Fri Jan 31 09:42:16.843391 2020] [deflate:debug] [pid 7456] mod_deflate.c(853): [client 127.0.0.1:55196] AH01384: Zlib: Compressed 43636 to 11482 : URL /index.php
+[Fri Jan 31 09:42:16.906755 2020] [authz_core:debug] [pid 7456] mod_authz_core.c(809): [client 127.0.0.1:55196] AH01626: authorization result of Require all granted: granted, referer: http://laravel-test.com/less_test
+[Fri Jan 31 09:42:16.906772 2020] [authz_core:debug] [pid 7456] mod_authz_core.c(809): [client 127.0.0.1:55196] AH01626: authorization result of <RequireAny>: granted, referer: http://laravel-test.com/less_test
+[Fri Jan 31 09:42:16.916042 2020] [authz_core:debug] [pid 3577] mod_authz_core.c(809): [client 127.0.0.1:55198] AH01626: authorization result of Require all granted: granted, referer: http://laravel-test.com/less_test
+[Fri Jan 31 09:42:16.916074 2020] [authz_core:debug] [pid 3577] mod_authz_core.c(809): [client 127.0.0.1:55198] AH01626: authorization result of <RequireAny>: granted, referer: http://laravel-test.com/less_test
+[Fri Jan 31 09:42:16.918288 2020] [authz_core:debug] [pid 7560] mod_authz_core.c(809): [client 127.0.0.1:55204] AH01626: authorization result of Require all granted: granted, referer: http://laravel-test.com/less_test
+[Fri Jan 31 09:42:16.918334 2020] [authz_core:debug] [pid 7560] mod_authz_core.c(809): [client 127.0.0.1:55204] AH01626: authorization result of <RequireAny>: granted, referer: http://laravel-test.com/less_test
+[Fri Jan 31 09:42:16.918433 2020] [authz_core:debug] [pid 7560] mod_authz_core.c(809): [client 127.0.0.1:55204] AH01626: authorization result of Require all granted: granted, referer: http://laravel-test.com/less_test
+[Fri Jan 31 09:42:16.918441 2020] [authz_core:debug] [pid 7560] mod_authz_core.c(809): [client 127.0.0.1:55204] AH01626: authorization result of <RequireAny>: granted, referer: http://laravel-test.com/less_test
+[Fri Jan 31 09:42:16.919617 2020] [authz_core:debug] [pid 3578] mod_authz_core.c(809): [client 127.0.0.1:55206] AH01626: authorization result of Require all granted: granted, referer: http://laravel-test.com/less_test
+[Fri Jan 31 09:42:16.919673 2020] [authz_core:debug] [pid 3578] mod_authz_core.c(809): [client 127.0.0.1:55206] AH01626: authorization result of <RequireAny>: granted, referer: http://laravel-test.com/less_test
+[Fri Jan 31 09:42:16.919770 2020] [authz_core:debug] [pid 3578] mod_authz_core.c(809): [client 127.0.0.1:55206] AH01626: authorization result of Require all granted: granted, referer: http://laravel-test.com/less_test
+[Fri Jan 31 09:42:16.919777 2020] [authz_core:debug] [pid 3578] mod_authz_core.c(809): [client 127.0.0.1:55206] AH01626: authorization result of <RequireAny>: granted, referer: http://laravel-test.com/less_test
+[Fri Jan 31 09:42:16.925491 2020] [authz_core:debug] [pid 3579] mod_authz_core.c(809): [client 127.0.0.1:55208] AH01626: authorization result of Require all granted: granted, referer: http://laravel-test.com/less_test
+[Fri Jan 31 09:42:16.925559 2020] [authz_core:debug] [pid 3579] mod_authz_core.c(809): [client 127.0.0.1:55208] AH01626: authorization result of <RequireAny>: granted, referer: http://laravel-test.com/less_test
+[Fri Jan 31 09:42:16.925736 2020] [deflate:debug] [pid 3579] mod_deflate.c(853): [client 127.0.0.1:55208] AH01384: Zlib: Compressed 2768 to 771 : URL /css/from_less.css, referer: http://laravel-test.com/less_test
+[Fri Jan 31 09:42:16.928676 2020] [deflate:debug] [pid 3577] mod_deflate.c(853): [client 127.0.0.1:55198] AH01384: Zlib: Compressed 200625 to 25758 : URL /css/app.css, referer: http://laravel-test.com/less_test
+[Fri Jan 31 09:42:17.034395 2020] [deflate:debug] [pid 7456] mod_deflate.c(853): [client 127.0.0.1:55196] AH01384: Zlib: Compressed 1456759 to 335582 : URL /js/app.js, referer: http://laravel-test.com/less_test
+[Fri Jan 31 09:42:17.096500 2020] [deflate:debug] [pid 7560] mod_deflate.c(853): [client 127.0.0.1:55204] AH01384: Zlib: Compressed 211071 to 119850 : URL /index.php, referer: http://laravel-test.com/less_test
+[Fri Jan 31 09:42:17.416954 2020] [authz_core:debug] [pid 3578] mod_authz_core.c(809): [client 127.0.0.1:55206] AH01626: authorization result of Require all granted: granted, referer: http://laravel-test.com/less_test
+[Fri Jan 31 09:42:17.416982 2020] [authz_core:debug] [pid 3578] mod_authz_core.c(809): [client 127.0.0.1:55206] AH01626: authorization result of <RequireAny>: granted, referer: http://laravel-test.com/less_test
+[Fri Jan 31 09:42:21.918731 2020] [authz_core:debug] [pid 3578] mod_authz_core.c(809): [client 127.0.0.1:55206] AH01626: authorization result of Require all granted: granted, referer: http://laravel-test.com/less_test
+[Fri Jan 31 09:42:21.918759 2020] [authz_core:debug] [pid 3578] mod_authz_core.c(809): [client 127.0.0.1:55206] AH01626: authorization result of <RequireAny>: granted, referer: http://laravel-test.com/less_test
+[Fri Jan 31 09:42:21.921964 2020] [authz_core:debug] [pid 7560] mod_authz_core.c(809): [client 127.0.0.1:55204] AH01626: authorization result of Require all granted: granted, referer: http://laravel-test.com/less_test
+[Fri Jan 31 09:42:21.921997 2020] [authz_core:debug] [pid 7560] mod_authz_core.c(809): [client 127.0.0.1:55204] AH01626: authorization result of <RequireAny>: granted, referer: http://laravel-test.com/less_test
+[Fri Jan 31 09:42:21.922167 2020] [deflate:debug] [pid 7560] mod_deflate.c(853): [client 127.0.0.1:55204] AH01384: Zlib: Compressed 2768 to 771 : URL /css/from_less.css, referer: http://laravel-test.com/less_test
+[Fri Jan 31 09:42:21.924288 2020] [deflate:debug] [pid 3578] mod_deflate.c(853): [client 127.0.0.1:55206] AH01384: Zlib: Compressed 200625 to 25758 : URL /css/app.css, referer: http://laravel-test.com/less_test
+[Fri Jan 31 09:42:22.030144 2020] [authz_core:debug] [pid 3578] mod_authz_core.c(809): [client 127.0.0.1:55206] AH01626: authorization result of Require all granted: granted
+[Fri Jan 31 09:42:22.030168 2020] [authz_core:debug] [pid 3578] mod_authz_core.c(809): [client 127.0.0.1:55206] AH01626: authorization result of <RequireAny>: granted
+[Fri Jan 31 09:42:22.030227 2020] [authz_core:debug] [pid 3578] mod_authz_core.c(809): [client 127.0.0.1:55206] AH01626: authorization result of Require all granted: granted
+[Fri Jan 31 09:42:22.030232 2020] [authz_core:debug] [pid 3578] mod_authz_core.c(809): [client 127.0.0.1:55206] AH01626: authorization result of <RequireAny>: granted
+[Fri Jan 31 09:43:32.979554 2020] [authz_core:debug] [pid 3580] mod_authz_core.c(809): [client 127.0.0.1:55800] AH01626: authorization result of Require all granted: granted
+[Fri Jan 31 09:43:32.979595 2020] [authz_core:debug] [pid 3580] mod_authz_core.c(809): [client 127.0.0.1:55800] AH01626: authorization result of <RequireAny>: granted
+[Fri Jan 31 09:43:32.979654 2020] [authz_core:debug] [pid 3580] mod_authz_core.c(809): [client 127.0.0.1:55800] AH01626: authorization result of Require all granted: granted
+[Fri Jan 31 09:43:32.979661 2020] [authz_core:debug] [pid 3580] mod_authz_core.c(809): [client 127.0.0.1:55800] AH01626: authorization result of <RequireAny>: granted
+[Fri Jan 31 09:43:33.023631 2020] [deflate:debug] [pid 3580] mod_deflate.c(853): [client 127.0.0.1:55800] AH01384: Zlib: Compressed 43278 to 11459 : URL /index.php
+[Fri Jan 31 09:43:33.046521 2020] [authz_core:debug] [pid 3580] mod_authz_core.c(809): [client 127.0.0.1:55800] AH01626: authorization result of Require all granted: granted, referer: http://laravel-test.com/less_test
+[Fri Jan 31 09:43:33.046542 2020] [authz_core:debug] [pid 3580] mod_authz_core.c(809): [client 127.0.0.1:55800] AH01626: authorization result of <RequireAny>: granted, referer: http://laravel-test.com/less_test
+[Fri Jan 31 09:43:33.056133 2020] [authz_core:debug] [pid 3581] mod_authz_core.c(809): [client 127.0.0.1:55802] AH01626: authorization result of Require all granted: granted, referer: http://laravel-test.com/less_test
+[Fri Jan 31 09:43:33.056164 2020] [authz_core:debug] [pid 3581] mod_authz_core.c(809): [client 127.0.0.1:55802] AH01626: authorization result of <RequireAny>: granted, referer: http://laravel-test.com/less_test
+[Fri Jan 31 09:43:33.061525 2020] [deflate:debug] [pid 3581] mod_deflate.c(853): [client 127.0.0.1:55802] AH01384: Zlib: Compressed 200625 to 25758 : URL /css/app.css, referer: http://laravel-test.com/less_test
+[Fri Jan 31 09:43:33.066785 2020] [authz_core:debug] [pid 8793] mod_authz_core.c(809): [client 127.0.0.1:55806] AH01626: authorization result of Require all granted: granted, referer: http://laravel-test.com/less_test
+[Fri Jan 31 09:43:33.066853 2020] [authz_core:debug] [pid 8793] mod_authz_core.c(809): [client 127.0.0.1:55806] AH01626: authorization result of <RequireAny>: granted, referer: http://laravel-test.com/less_test
+[Fri Jan 31 09:43:33.088443 2020] [deflate:debug] [pid 8793] mod_deflate.c(853): [client 127.0.0.1:55806] AH01384: Zlib: Compressed 2768 to 771 : URL /css/from_less.css, referer: http://laravel-test.com/less_test
+[Fri Jan 31 09:43:33.118407 2020] [deflate:debug] [pid 3580] mod_deflate.c(853): [client 127.0.0.1:55800] AH01384: Zlib: Compressed 1456759 to 335582 : URL /js/app.js, referer: http://laravel-test.com/less_test
+[Fri Jan 31 09:43:33.516523 2020] [authz_core:debug] [pid 3580] mod_authz_core.c(809): [client 127.0.0.1:55800] AH01626: authorization result of Require all granted: granted
+[Fri Jan 31 09:43:33.516542 2020] [authz_core:debug] [pid 3580] mod_authz_core.c(809): [client 127.0.0.1:55800] AH01626: authorization result of <RequireAny>: granted
+[Fri Jan 31 09:43:33.516600 2020] [authz_core:debug] [pid 3580] mod_authz_core.c(809): [client 127.0.0.1:55800] AH01626: authorization result of Require all granted: granted
+[Fri Jan 31 09:43:33.516605 2020] [authz_core:debug] [pid 3580] mod_authz_core.c(809): [client 127.0.0.1:55800] AH01626: authorization result of <RequireAny>: granted
+[Fri Jan 31 09:43:33.623333 2020] [authz_core:debug] [pid 8793] mod_authz_core.c(809): [client 127.0.0.1:55806] AH01626: authorization result of Require all granted: granted, referer: http://laravel-test.com/less_test
+[Fri Jan 31 09:43:33.623351 2020] [authz_core:debug] [pid 8793] mod_authz_core.c(809): [client 127.0.0.1:55806] AH01626: authorization result of <RequireAny>: granted, referer: http://laravel-test.com/less_test

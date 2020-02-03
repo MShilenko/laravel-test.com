@@ -11356,3 +11356,37 @@ a.text-dark:focus {
   }
 }
 
+.gallery .gallery-block {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+          flex-flow: row wrap;
+  -webkit-box-pack: start;
+          justify-content: flex-start;
+}
+
+.gallery .gallery-block {
+  background: #d8d8d8;
+}
+
+.cust-buttons .clr-black {
+  color: #000000;
+}
+
+.cust-buttons .clr-red {
+  color: #ff0000;
+}
+
+.cust-buttons .clr-purple {
+  color: #800080;
+}
+
+.cust-buttons .clr-green {
+  color: #008000;
+}
+
+.cust-buttons .clr-blue {
+  color: #0000ff;
+}
+
